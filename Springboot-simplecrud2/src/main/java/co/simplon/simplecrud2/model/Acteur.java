@@ -40,7 +40,7 @@ public class Acteur {
     
 
     @ManyToOne
-    @JoinColumn(name="idFilm")
+    @JoinColumn(name="idFilm",table="film")
     private Film film;
 
 
