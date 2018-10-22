@@ -59,7 +59,7 @@ public class FilmController {
 			return ResponseEntity.notFound().build();
 		
 		// Update the mandatory attributes
-		filmToUpdate.setName(film.getName());
+		filmToUpdate.setFilmName(film.getFilmName());
 		
 		
 	

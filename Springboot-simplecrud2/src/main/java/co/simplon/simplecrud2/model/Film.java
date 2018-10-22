@@ -21,11 +21,14 @@ public class Film {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idFilm;
 	
-	private String name;
+	@NotBlank
+	private String filmName;
 	
+	@NotBlank
 	private String year;
-		
-	private int rate ;
+	
+	@NotBlank
+	private int rate;
 
 	public long getIdFilm() {
 		return idFilm;
@@ -35,12 +38,12 @@ public class Film {
 		this.idFilm = idFilm;
 	}
 
-	public String getName() {
-		return name;
+	public String getFilmName() {
+		return filmName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFilmName(String filmName) {
+		this.filmName = filmName;
 	}
 
 	public String getYear() {
@@ -58,6 +61,8 @@ public class Film {
 	public void setRate(int rate) {
 		this.rate = rate;
 	}
+	
+	
 	
 	
 

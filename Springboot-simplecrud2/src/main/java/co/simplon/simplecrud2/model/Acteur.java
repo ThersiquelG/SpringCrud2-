@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
@@ -20,8 +22,10 @@ public class Acteur {
 	
 	@NotBlank
 	private String firstname;
+	
 	@NotBlank
 	private String name;
+	
 	
 	private String address;
 	
@@ -30,12 +34,21 @@ public class Acteur {
 	
 	@Pattern(regexp="^\\+?\\d+$")
 	private String phone;
+	
+	
+	
+    
 
-	public long getId() {
+    @ManyToOne
+    @JoinColumn(name="idFilm")
+    private Film film;
+
+
+	public long getIdActeur() {
 		return idActeur;
 	}
 
-	public void setId(long idActeur) {
+	public void setIdActeur(long idActeur) {
 		this.idActeur = idActeur;
 	}
 
@@ -78,6 +91,8 @@ public class Acteur {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	
 	
 
 }
